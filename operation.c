@@ -6,68 +6,56 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:51:02 by msharifi          #+#    #+#             */
-/*   Updated: 2022/05/30 14:46:32 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:14:11 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_stack(t_stack **stack)
+void	swap_stack(t_list *stack)
 {
-	size_t	i;
-	int		tmp;
+	void	*tmp;
+	t_list	*tmp_next;
 
-	if (ft_lstsize(*stack) > 1)
-	{
-		tmp = stack->array[stack->size - 1];
-		i = stack->size - 1;
-		while (i > 0)
-		{
-			stack->array[i] = stack->array[i - 1];
-			i--;
-		}
-		stack->array[0] = tmp;
-	}
+	tmp = stack->content;
+	tmp_next = stack->next;
+	stack->content = tmp_next->content;
+	stack = stack->next;
+	stack->content = tmp;
 }
 
-void	reverse_stack(t_stack *stack)
+void	rotate_stack(t_list **stack)
 {
-	size_t	i;
-	int		tmp;
+	void	*tmp;
+	t_list	*prev;
 
-	if (stack->size > 1)
-	{
-		tmp = stack->array[0];
-		i = 0;
-		while (i < stack->size - 1)
-		{
-			stack->array[i] = stack->array[i + 1];
-			i++;
-		}
-		stack->array[stack->size - 1] = tmp
-	}
+	tmp = (*stack)->content;
+	prev = (*stack);
+	(*stack) = (*stack)->next;
+	free(prev);
+	insert_last(stack, tmp);
 }
 
-void	push_stack(t_stack *stack_1, t_stack *stack_2)
+void	reverse_rotate_stack(t_list **stack)
 {
-	if (stack_2->size > 1)
-	{
-		stack_1->size++;
-		reverse_rotate_stack(stack_1);
-		stack_1[0] = stack_2[0];
-		reverse_stack(stack_2);
-		stack_2->size--;
-	}
+	t_list	*last_node;
+	t_list	*before_last_node;
+
+	last_node = ft_lstlast(*stack);
+	last_node->next = *stack;
+	before_last_node = find_prev_elem(*stack, last_node->content);
+	before_last_node->next = NULL;
+	*stack = last_node;
 }
 
-void	swap_stack(t_stack *stack)
+void	push_stack(t_list **stack1, t_list **stack2)
 {
-	int	tmp;
+	t_list	*new;
 
-	if (stack->size > 1)
-	{
-		tmp = stack->array[0];
-		stack->array[0] = stack_2->array[1];
-		stack->array[1] = tmp;
-	}
+	if (!*stack2)
+		return ;
+	new = ft_lstnew((*stack2)->content);
+	new->next = *stack1;
+	*stack1 = new;
+	delete_node(stack2, (*stack2)->content);
 }
