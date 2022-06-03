@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:08:38 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/02 18:09:48 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:57:41 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,27 @@ t_list	*ft_lstnew(void *content)
 	return (element);
 }
 
+size_t	ft_lstsize(t_list *lst)
+{
+	size_t	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*tmp;
 
 	if (!lst)
-		return (0);
+		return (NULL);
 	tmp = lst;
 	while (tmp->next)
 		tmp = tmp->next;
@@ -52,6 +67,8 @@ void	free_list(t_list **lst)
 {
 	t_list	*save;
 
+	if (!*lst)
+		return ;
 	while (*lst)
 	{
 		save = (*lst)->next;
@@ -64,6 +81,8 @@ void	print_list(t_list **lst)
 {
 	t_list	*tmp;
 
+	if (!*lst || !lst)
+		return ;
 	tmp = *lst;
 	while (tmp)
 	{

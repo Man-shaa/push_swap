@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:51:02 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/02 18:14:11 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:49:09 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	swap_stack(t_list *stack)
 {
 	void	*tmp;
 	t_list	*tmp_next;
-
+	
+	if (ft_lstsize(stack) <= 1)
+		return ;
 	tmp = stack->content;
 	tmp_next = stack->next;
 	stack->content = tmp_next->content;
@@ -29,6 +31,8 @@ void	rotate_stack(t_list **stack)
 	void	*tmp;
 	t_list	*prev;
 
+	if (ft_lstsize(*stack) <= 1)
+		return ;
 	tmp = (*stack)->content;
 	prev = (*stack);
 	(*stack) = (*stack)->next;
@@ -41,6 +45,8 @@ void	reverse_rotate_stack(t_list **stack)
 	t_list	*last_node;
 	t_list	*before_last_node;
 
+	if (ft_lstsize(*stack) <= 1)
+		return ;
 	last_node = ft_lstlast(*stack);
 	last_node->next = *stack;
 	before_last_node = find_prev_elem(*stack, last_node->content);
@@ -52,7 +58,7 @@ void	push_stack(t_list **stack1, t_list **stack2)
 {
 	t_list	*new;
 
-	if (!*stack2)
+	if (!ft_lstsize(*stack2))
 		return ;
 	new = ft_lstnew((*stack2)->content);
 	new->next = *stack1;

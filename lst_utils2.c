@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:13:35 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/02 18:13:45 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:12:41 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ t_list	*find_elem(t_list *lst, void *val)
 {
 	t_list	*search;
 
+	if (!lst)
+		return (NULL);
 	search = lst;
 	lst = lst->next;
 	while (search->content != val && lst)
@@ -83,6 +85,8 @@ t_list	*find_prev_elem(t_list *lst, void *val)
 	t_list	*search;
 	t_list	*before;
 
+	if (!lst)
+		return (NULL);
 	before = lst;
 	search = lst->next;
 	while (before->content != val && search->content != val && search)
