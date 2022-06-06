@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:00:25 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/03 15:49:13 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:14:27 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,36 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
+	int				index;
 	struct s_list	*next;
 }				t_list;
 
-t_list	*find_elem(t_list *lst, void *val);
-t_list	*find_prev_elem(t_list *lst, void *val);
+t_list	*find_elem(t_list *lst, int val);
+t_list	*find_prev_elem(t_list *lst, int val);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	insert_last(t_list **lst, void	*content);
-void	insert_node(t_list *prev_node, void *content);
-void	delete_node(t_list **lst, void *content);
+void	insert_last(t_list **lst, int val);
+void	insert_node(t_list *prev_node, int val);
+void	delete_node(t_list **lst, int content);
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int val);
 size_t	ft_lstsize(t_list *lst);
-void	push(t_list **lst, void *x);
+void	push(t_list **lst, int val);
 t_list	*ft_lstlast(t_list *lst);
 void	print_list(t_list **lst);
 void	free_list(t_list **lst);
 
 void	push_stack(t_list **stack1, t_list **stack2);
 void	swap_stack(t_list *stack);
-int		parsing(t_list *lst);
 void	reverse_rotate_stack(t_list **stack);
 void	sort_small(t_list **lst);
 void	rotate_stack(t_list **stack);
+
+void	indexing(t_list *list);
+
+int		ft_atoi(char *str);
+int		is_arg_valid(char **str);
+t_list	*init_list(int ac, char **av);
+int		parsing(t_list *stack);
 
 #endif

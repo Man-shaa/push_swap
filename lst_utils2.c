@@ -6,36 +6,36 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:13:35 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/03 15:12:41 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:32:12 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_node(t_list *prev_node, void *content)
+void	insert_node(t_list *prev_node, int val)
 {
 	t_list	*node;
 
 	if (!prev_node)
 		return ;
 	node = malloc(sizeof(t_list));
-	node->content = content;
+	node->content = val;
 	node->next = prev_node->next;
 	prev_node->next = node;
 }
 
-void	insert_last(t_list **lst, void	*content)
+void	insert_last(t_list **lst, int val)
 {
 	t_list	*node;
 	t_list	*last;
 
-	node = ft_lstnew(content);
+	node = ft_lstnew(val);
 	last = ft_lstlast(*lst);
 	last->next = node;
 	node->next = NULL;
 }
 
-void	delete_node(t_list **lst, void *content)
+void	delete_node(t_list **lst, int val)
 {
 	t_list	*prev;
 	t_list	*tmp;
@@ -44,25 +44,25 @@ void	delete_node(t_list **lst, void *content)
 		return ;
 	tmp = (*lst)->next;
 	prev = (*lst);
-	if (prev->content == content)
+	if (prev->content == val)
 	{
 		*lst = (*lst)->next;
 		free(prev);
 		return ;
 	}
-	while (tmp->content != content && tmp->next)
+	while (tmp->content != val && tmp->next)
 	{
 		prev = tmp;
 		tmp = tmp->next;
 	}
-	if (tmp->content == content)
+	if (tmp->content == val)
 	{
 		prev->next = tmp->next;
 		free(tmp);
 	}
 }
 
-t_list	*find_elem(t_list *lst, void *val)
+t_list	*find_elem(t_list *lst, int val)
 {
 	t_list	*search;
 
@@ -80,7 +80,7 @@ t_list	*find_elem(t_list *lst, void *val)
 	return (NULL);
 }
 
-t_list	*find_prev_elem(t_list *lst, void *val)
+t_list	*find_prev_elem(t_list *lst, int val)
 {
 	t_list	*search;
 	t_list	*before;

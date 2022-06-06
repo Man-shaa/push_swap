@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:51:02 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/03 15:49:09 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:35:42 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap_stack(t_list *stack)
 {
-	void	*tmp;
+	int		tmp;
 	t_list	*tmp_next;
 	
 	if (ft_lstsize(stack) <= 1)
@@ -28,7 +28,7 @@ void	swap_stack(t_list *stack)
 
 void	rotate_stack(t_list **stack)
 {
-	void	*tmp;
+	int		tmp;
 	t_list	*prev;
 
 	if (ft_lstsize(*stack) <= 1)

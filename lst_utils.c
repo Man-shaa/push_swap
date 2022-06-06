@@ -6,20 +6,20 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:08:38 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/03 15:57:41 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:33:41 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int val)
 {
 	t_list	*element;
 
 	element = malloc(sizeof(*element));
 	if (!element)
 		return (0);
-	element->content = content;
+	element->content = val;
 	element->next = 0;
 	return (element);
 }
@@ -51,14 +51,14 @@ t_list	*ft_lstlast(t_list *lst)
 	return (tmp);
 }
 
-void	push(t_list **lst, void *x)
+void	push(t_list **lst, int val)
 {
 	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return ;
-	new->content = x;
+	new->content = val;
 	new->next = *lst;
 	*lst = new;
 }
@@ -86,7 +86,7 @@ void	print_list(t_list **lst)
 	tmp = *lst;
 	while (tmp)
 	{
-		printf("%s\n", (char *)tmp->content);
+		printf("%i\n", tmp->content);
 		tmp = tmp->next;
 	}
 	printf("\n");
