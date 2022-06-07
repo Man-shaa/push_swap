@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tri.c                                              :+:      :+:    :+:   */
+/*   tri_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:32 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/06 17:14:27 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/07 17:53:00 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,31 @@ void	indexing(t_list *list)
 		}
 		list = list->next;
 	}
+}
+
+int	get_max_bits(t_list *lst)
+{
+	int	n;
+	int	save_val;
+	int	content;
+
+	save_val = 0;
+	n = 0;
+	indexing(lst);
+	while (lst)
+	{
+		if (lst->index > save_val)
+		{
+			save_val = lst->index;
+			content = lst->content;
+		}
+		lst = lst->next;
+	}
+	while (content != 0)
+	{
+
+		content /= 10;
+		n++;
+	}
+	return (n);
 }

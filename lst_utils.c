@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 18:08:38 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/06 14:33:41 by msharifi         ###   ########.fr       */
+/*   Created: 2022/06/07 14:46:41 by msharifi          #+#    #+#             */
+/*   Updated: 2022/06/07 14:48:46 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,19 +75,4 @@ void	free_list(t_list **lst)
 		free(*lst);
 		*lst = save;
 	}
-}
-
-void	print_list(t_list **lst)
-{
-	t_list	*tmp;
-
-	if (!*lst || !lst)
-		return ;
-	tmp = *lst;
-	while (tmp)
-	{
-		printf("%i\n", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n");
 }

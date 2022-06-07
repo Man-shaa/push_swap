@@ -6,17 +6,34 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:00:05 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/06 17:14:24 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:39:03 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	is_sort(t_list	*lst)
+{
+	t_list	*after;
+
+	if (!lst)
+		return (0);
+	after = lst->next;
+	while (after && lst->content < after->content)
+	{
+		lst = after;
+		after = after->next;
+	}
+	if (!after)
+		return (0);
+	return (1);
+}
+
 int	parsing(t_list *stack)
 {
 	t_list	*save;
 
-	if (!stack || !stack->next)
+	if (!stack || !stack->next || !is_sort(stack))
 		return (0);
 	while (stack)
 	{
