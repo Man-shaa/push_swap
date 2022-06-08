@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:34:58 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/07 17:54:18 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:42:08 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 		{
 			head_a = *stack_a;
 			if (((head_a->index >> i) & 1) == 1)
-				rotate_stack(stack_a);
+				rotate_stack(stack_a, 'a');
 			else
-				push_stack(stack_a, stack_b);
+				push_stack(stack_a, stack_b, 'a');
 		}
 		while (ft_lstsize(*stack_b) != 0)
-			push_stack(stack_a, stack_b);
+			push_stack(stack_a, stack_b, 'a');
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:00:05 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/07 16:39:03 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:12:31 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	parsing(t_list *stack)
 		while (save)
 		{
 			if (stack->content == save->content)
-				return(0);
+				return (0);
 			save = save->next;
 		}
 		stack = stack->next;

@@ -6,7 +6,8 @@ SRCS =	lst_utils.c \
 		operation.c \
 		parsing.c \
 		tri_utils.c \
-		radix_sort.c
+		radix_sort.c \
+		operation_call.c
 
 OBJS = ${SRCS:.c=.o}
 

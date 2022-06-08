@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:46:41 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/07 14:48:46 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:08:58 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ size_t	ft_lstsize(t_list *lst)
 	size_t	i;
 
 	i = 0;
-	if (!lst)
-		return (0);
 	while (lst)
 	{
 		lst = lst->next;

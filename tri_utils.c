@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:32 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/07 17:53:00 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:49:28 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	get_max_bits(t_list *lst)
 	}
 	while (content != 0)
 	{
-
 		content /= 10;
 		n++;
 	}

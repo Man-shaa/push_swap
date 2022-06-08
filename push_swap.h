@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:00:25 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/07 17:53:17 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:39:30 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,10 @@ void	push(t_list **lst, int val);
 t_list	*ft_lstlast(t_list *lst);
 void	free_list(t_list **lst);
 
-void	push_stack(t_list **stack1, t_list **stack2);
-void	swap_stack(t_list *stack);
-void	reverse_rotate_stack(t_list **stack);
-void	sort_small(t_list **lst);
-void	rotate_stack(t_list **stack);
+int		push_stack(t_list **stack1, t_list **stack2, char c);
+int		swap_stack(t_list *stack, char c);
+int		reverse_rotate_stack(t_list **stack, char c);
+int		rotate_stack(t_list **stack, char c);
 
 void	indexing(t_list *list);
 int		get_max_bits(t_list *lst);
@@ -54,7 +53,12 @@ int		parsing(t_list *stack);
 
 void	print_list(t_list **lst);
 void	print_index(t_list **lst);
+void	ft_putendl_fd(char *str, int fd);
 
 void	radix_sort(t_list **stack_a, t_list **stack_b);
+
+int		ss(t_list *stack_a, t_list *stack_b);
+int		rr(t_list **stack_a, t_list **stack_b);
+int		rrr(t_list **stack_a, t_list **stack_b);
 
 #endif
