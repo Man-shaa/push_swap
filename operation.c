@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:51:02 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:37:53 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/09 17:57:22 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,22 @@ int	swap_stack(t_list *stack, char c)
 int	rotate_stack(t_list **stack, char c)
 {
 	int		tmp;
+	int		tmp_index;
 	t_list	*prev;
 
 	if (ft_lstsize(*stack) <= 1)
 		return (-1);
 	tmp = (*stack)->content;
+	tmp_index = (*stack)->index;
 	prev = (*stack);
 	(*stack) = (*stack)->next;
 	free(prev);
-	insert_last(stack, tmp);
+	insert_last(stack, tmp, tmp_index);
 	if (c == 'a')
-		ft_putendl_fd("sa", 1);
+		ft_putendl_fd("ra", 1);
 	else if (c == 'b')
-		ft_putendl_fd("sb", 1);
-	return (0);
+		ft_putendl_fd("rb", 1);
+	return (1);
 }
 
 int	reverse_rotate_stack(t_list **stack, char c)
@@ -67,10 +69,10 @@ int	reverse_rotate_stack(t_list **stack, char c)
 	before_last_node->next = NULL;
 	*stack = last_node;
 	if (c == 'a')
-		ft_putendl_fd("sa", 1);
+		ft_putendl_fd("rra", 1);
 	else if (c == 'b')
-		ft_putendl_fd("sb", 1);
-	return (0);
+		ft_putendl_fd("rrb", 1);
+	return (1);
 }
 
 int	push_stack(t_list **stack1, t_list **stack2, char c)
@@ -79,13 +81,13 @@ int	push_stack(t_list **stack1, t_list **stack2, char c)
 
 	if (ft_lstsize(*stack2) == 0)
 		return (-1);
-	new = ft_lstnew((*stack2)->content);
+	new = ft_lstnew((*stack2)->content, (*stack2)->index);
 	new->next = *stack1;
 	*stack1 = new;
 	delete_node(stack2, (*stack2)->content);
 	if (c == 'a')
-		ft_putendl_fd("sa", 1);
+		ft_putendl_fd("pa", 1);
 	else if (c == 'b')
-		ft_putendl_fd("sb", 1);
-	return (0);
+		ft_putendl_fd("pb", 1);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:00:05 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:12:31 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/11 16:49:58 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	is_sort(t_list	*lst)
 {
 	t_list	*after;
 
-	if (!lst)
-		return (0);
 	after = lst->next;
 	while (after && lst->content < after->content)
 	{
@@ -33,7 +31,7 @@ int	parsing(t_list *stack)
 {
 	t_list	*save;
 
-	if (!stack || !stack->next || !is_sort(stack))
+	if (!stack)
 		return (0);
 	while (stack)
 	{
@@ -92,19 +90,4 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (res * sign);
-}
-
-t_list	*init_list(int ac, char **av)
-{
-	t_list	*stack;
-	int		i;
-
-	stack = ft_lstnew(ft_atoi(av[1]));
-	i = 2;
-	while (i < ac)
-	{
-		insert_last(&stack, ft_atoi(av[i]));
-		i++;
-	}
-	return (stack);
 }

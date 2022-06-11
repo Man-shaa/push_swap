@@ -6,11 +6,27 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:12:08 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:14:29 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:11:55 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	parse(int ac, char **av)
+{
+	t_list	*stack;
+
+	if (!is_arg_valid(av))
+		return (write(1, "Error\n", 6), 0);
+	if (ac <= 2)
+		return (0);
+	stack = init_list(ac, av);
+	if (!parsing(stack))
+		return (free_list(&stack), write(1, "Error\n", 6), 0);
+	if (!is_sort(stack))
+		return (free_list(&stack), 0);
+	return (free_list(&stack), 1);
+}
 
 void	print_index(t_list **lst)
 {
@@ -57,18 +73,19 @@ int	main(int ac, char **av)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (ac <= 2 || !is_arg_valid(av))
-		return (-1);
+	if (!parse(ac, av))
+		return (0);
 	stack_a = malloc(sizeof(t_list));
 	stack_b = malloc(sizeof(t_list));
-	*stack_a = init_list(ac, av);
+	if (!stack_a || !stack_b)
+		return (0);
+	*stack_a = init_list(ac, av);	
 	*stack_b = NULL;
-	if (!parsing(*stack_a))
-		return (free_list(stack_a), free(stack_a), free(stack_b), 0);
 	print_list(stack_a);
-	indexing(*stack_a);
-	print_index(stack_a);
-	radix_sort(stack_a, stack_b);
+	if (ft_lstsize(*stack_a) <= 5)
+		sort_small(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 	print_list(stack_a);
 	print_index(stack_a);
 	free_list(stack_a);

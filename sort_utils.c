@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tri_utils.c                                        :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:32 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 13:49:28 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:29:50 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,36 @@ void	indexing(t_list *list)
 	}
 }
 
-int	get_max_bits(t_list *lst)
+int	find_index(t_list *stack, int x)
+{
+	int		i;
+	t_list	*travel;
+
+	i = 0;
+	travel = stack;
+	while (travel && travel->index != x)
+	{
+		i++;
+		travel = travel->next;
+	}
+	return (i);
+}
+
+int	get_max_bits_index(t_list *lst)
 {
 	int	n;
 	int	save_val;
-	int	content;
 
 	save_val = 0;
-	n = 0;
-	indexing(lst);
 	while (lst)
 	{
-		if (lst->index > save_val)
-		{
+		if (save_val < lst->index)
 			save_val = lst->index;
-			content = lst->content;
-		}
 		lst = lst->next;
 	}
-	while (content != 0)
+	while (save_val != 0)
 	{
-		content /= 10;
+		save_val /= 10;
 		n++;
 	}
 	return (n);

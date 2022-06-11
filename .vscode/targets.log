@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'lst_utils.o', needed by 'push_swap'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'lst_utils.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  8 17:52:18 2022
+# Make data base, printed on Sat Jun 11 13:43:59 2022
 
 # Variables
 
@@ -40,18 +38,14 @@ XMODIFIERS = @im=ibus
 CURDIR := /mnt/nfs/homes/msharifi/Documents/push_swap
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 16)
+# makefile (from 'Makefile', line 17)
 RM = rm -rf
-# environment
-GDM_LANG = en
-# environment
-VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/code
+_ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 9:3800179
+JOURNAL_STREAM = 9:685482
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -59,7 +53,7 @@ MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-IM_CONFIG_PHASE = 1
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -70,18 +64,18 @@ XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/msharifi/.loca
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101728/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 12)
+# makefile (from 'Makefile', line 13)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 454727
+MANAGERPID = 154662
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101728/vscode-ipc-7e138697-a37a-4b43-8181-b97f026a3796.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101728/vscode-ipc-8b141fca-3519-4d30-856e-ace6f2dd9fbd.sock
 # environment
-VSCODE_CWD = /mnt/nfs/homes/msharifi/Documents/push_swap
+VSCODE_CWD = /mnt/nfs/homes/msharifi
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session5
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101728_4qGNHv
+KRB5CCNAME = FILE:/tmp/krb5cc_101728_lxMmNw
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -91,7 +85,7 @@ GPG_AGENT_INFO = /run/user/101728/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e2r9p2.clusters.42paris.fr:@/tmp/.ICE-unix/455210,unix/e2r9p2.clusters.42paris.fr:/tmp/.ICE-unix/455210
+SESSION_MANAGER = local/e3r7p2.clusters.42paris.fr:@/tmp/.ICE-unix/155067,unix/e3r7p2.clusters.42paris.fr:/tmp/.ICE-unix/155067
 # environment
 XDG_RUNTIME_DIR = /run/user/101728
 # environment
@@ -101,19 +95,19 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = f3bd16364e074e55992a6119d815305d
+INVOCATION_ID = 44a7d41079054a4fa17ba4bceb333521
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/msharifi
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101728/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 155504
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +119,7 @@ PWD = /mnt/nfs/homes/msharifi/Documents/push_swap
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 455155
+SSH_AGENT_PID = 154993
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -134,8 +128,6 @@ GTK_MODULES = gail:atk-bridge
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /mnt/nfs/homes/msharifi
-# environment
-VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/msharifi/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
@@ -152,8 +144,6 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -161,9 +151,11 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 3)
-SRCS = lst_utils.c lst_utils2.c main.c operation.c parsing.c tri_utils.c radix_sort.c operation_call.c
+SRCS = lst_utils.c lst_utils2.c main.c operation_call.c operation.c parsing.c radix_sort.c sort_small.c sort_utils.c 
 # environment
-SHLVL = 1
+SHLVL = 0
+# environment
+IM_CONFIG_PHASE = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -186,8 +178,6 @@ OLDPWD = /mnt/nfs/homes/msharifi
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
-# environment
-LANGUAGE = en
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
@@ -218,15 +208,11 @@ PAGER = less
 LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c49a5d59_9a5b_4796_bdd4_d2294eb85e4d
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.86
 # default
 SUFFIXES := 
-# makefile (from 'Makefile', line 14)
+# makefile (from 'Makefile', line 15)
 FLAGS = -Wall -Werror -Wall
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
@@ -241,13 +227,11 @@ NAME = push_swap
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
 DOCKER_HOST = unix:///run/user/101728/docker.sock
 # environment
-VSCODE_PID = 485178
+VSCODE_PID = 155504
 # variable set hash-table stats:
-# Load=117/1024=11%, Rehash=0, Collisions=18/146=12%
+# Load=110/1024=11%, Rehash=0, Collisions=15/139=11%
 
 # Pattern-specific Variable Values
 
@@ -255,9 +239,9 @@ VSCODE_PID = 485178
 
 # Directories
 
-# . (device 57, inode 237971601): 15 files, no impossibilities.
+# . (device 61, inode 237971601): 26 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -267,16 +251,18 @@ VSCODE_PID = 485178
 
 # Not a target:
 radix_sort.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 16:39:27.728908871
+#  File has been updated.
+#  Successfully updated.
 
 all: push_swap
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 .PHONY: clean fclean re all
 #  Implicit rule search has not been done.
@@ -284,38 +270,40 @@ all: push_swap
 #  File has not been updated.
 
 # Not a target:
-tri_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+sort_small.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 18:27:25.942615438
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-08 17:41:57.883677069
+#  Last modified 2022-06-09 16:40:31.268895516
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 lst_utils.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-06-09 17:51:21.171459029
+#  File has been updated.
+#  Successfully updated.
 
 .c.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
+#  recipe to execute (from 'Makefile', line 25):
 	gcc $(FLAGS) -c $< -o $(<:.c=.o)
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
+#  recipe to execute (from 'Makefile', line 31):
 	${RM} push_swap
 
 # Not a target:
@@ -335,60 +323,73 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
+#  recipe to execute (from 'Makefile', line 28):
 	${RM} ${OBJS}
 
-push_swap: lst_utils.o lst_utils2.o main.o operation.o parsing.o tri_utils.o radix_sort.o operation_call.o
+push_swap: lst_utils.o lst_utils2.o main.o operation_call.o operation.o parsing.o radix_sort.o sort_small.o sort_utils.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
+#  Last modified 2022-06-09 18:27:26.338615281
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 20):
 	gcc -g3 ${SRCS} -o $@
 
 # Not a target:
 operation_call.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 16:39:27.616908893
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 18:18:35.594839212
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 lst_utils2.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 17:53:34.039410855
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 parsing.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 17:57:22.923329138
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 operation.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 17:57:22.879329154
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_utils.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 17:55:37.035366775
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/45=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/47=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 342 B / avg = 10 B
-# current buf: size = 8162 B / used = 342 B / count = 34 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 358 B / avg = 9 B
+# current buf: size = 8162 B / used = 358 B / count = 36 / avg = 9 B
 
-# strcache performance: lookups = 54 / hit rate = 37%
+# strcache performance: lookups = 66 / hit rate = 45%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=1/54=2%
-# Finished Make data base on Wed Jun  8 17:52:18 2022
+# Load=36/8192=0%, Rehash=0, Collisions=1/66=2%
+# Finished Make data base on Sat Jun 11 13:43:59 2022
 
  

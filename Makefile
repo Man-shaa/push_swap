@@ -3,11 +3,12 @@ NAME = push_swap
 SRCS =	lst_utils.c \
 		lst_utils2.c \
 		main.c \
+		operation_call.c \
 		operation.c \
 		parsing.c \
-		tri_utils.c \
 		radix_sort.c \
-		operation_call.c
+		sort_small.c \
+		sort_utils.c 
 
 OBJS = ${SRCS:.c=.o}
 

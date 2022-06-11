@@ -6,13 +6,13 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:46:41 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:08:58 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/09 17:49:17 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int val)
+t_list	*ft_lstnew(int val, int index)
 {
 	t_list	*element;
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int val)
 	if (!element)
 		return (0);
 	element->content = val;
+	element->index = index;
 	element->next = 0;
 	return (element);
 }
@@ -47,18 +48,6 @@ t_list	*ft_lstlast(t_list *lst)
 	while (tmp->next)
 		tmp = tmp->next;
 	return (tmp);
-}
-
-void	push(t_list **lst, int val)
-{
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return ;
-	new->content = val;
-	new->next = *lst;
-	*lst = new;
 }
 
 void	free_list(t_list **lst)

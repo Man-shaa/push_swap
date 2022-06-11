@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:00:25 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:39:30 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:24:10 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-t_list	*find_elem(t_list *lst, int val);
+void	delete_node(t_list **lst, int val);
 t_list	*find_prev_elem(t_list *lst, int val);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	insert_last(t_list **lst, int val);
-void	insert_node(t_list *prev_node, int val);
-void	delete_node(t_list **lst, int content);
+void	insert_last(t_list **lst, int val, int index);
+t_list	*init_list(int ac, char **av);
 
-t_list	*ft_lstnew(int val);
+t_list	*ft_lstnew(int val, int index);
 size_t	ft_lstsize(t_list *lst);
-void	push(t_list **lst, int val);
 t_list	*ft_lstlast(t_list *lst);
 void	free_list(t_list **lst);
 
@@ -43,14 +40,17 @@ int		reverse_rotate_stack(t_list **stack, char c);
 int		rotate_stack(t_list **stack, char c);
 
 void	indexing(t_list *list);
+int		find_index(t_list *stack, int x);
 int		get_max_bits(t_list *lst);
+int	get_max_bits_index(t_list *lst);
 
 int		is_sort(t_list	*lst);
 int		ft_atoi(char *str);
 int		is_arg_valid(char **str);
-t_list	*init_list(int ac, char **av);
 int		parsing(t_list *stack);
 
+int		parse(int ac, char **av);
+int		is_int(char **str);
 void	print_list(t_list **lst);
 void	print_index(t_list **lst);
 void	ft_putendl_fd(char *str, int fd);
@@ -60,5 +60,11 @@ void	radix_sort(t_list **stack_a, t_list **stack_b);
 int		ss(t_list *stack_a, t_list *stack_b);
 int		rr(t_list **stack_a, t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
+
+void	sort_2(t_list **stack, char c);
+void	sort_3(t_list **stack, char c);
+void	sort_4(t_list **stack_a, t_list **stack_b, int x);
+void	sort_5(t_list **stack_a, t_list **stack_b);
+void	sort_small(t_list **stack_a, t_list **stack_b);
 
 #endif

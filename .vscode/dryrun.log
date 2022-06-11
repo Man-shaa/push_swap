@@ -3,11 +3,12 @@ make: Entering directory '/mnt/nfs/homes/msharifi/Documents/push_swap'
 gcc -Wall -Werror -Wall -c lst_utils.c -o lst_utils.o
 gcc -Wall -Werror -Wall -c lst_utils2.c -o lst_utils2.o
 gcc -Wall -Werror -Wall -c main.c -o main.o
+gcc -Wall -Werror -Wall -c operation_call.c -o operation_call.o
 gcc -Wall -Werror -Wall -c operation.c -o operation.o
 gcc -Wall -Werror -Wall -c parsing.c -o parsing.o
-gcc -Wall -Werror -Wall -c tri_utils.c -o tri_utils.o
 gcc -Wall -Werror -Wall -c radix_sort.c -o radix_sort.o
-gcc -Wall -Werror -Wall -c operation_call.c -o operation_call.o
-gcc -g3 lst_utils.c lst_utils2.c main.c operation.c parsing.c tri_utils.c radix_sort.c operation_call.c -o push_swap
+gcc -Wall -Werror -Wall -c sort_small.c -o sort_small.o
+gcc -Wall -Werror -Wall -c sort_utils.c -o sort_utils.o
+gcc -g3 lst_utils.c lst_utils2.c main.c operation_call.c operation.c parsing.c radix_sort.c sort_small.c sort_utils.c  -o push_swap
 make: Leaving directory '/mnt/nfs/homes/msharifi/Documents/push_swap'
  
