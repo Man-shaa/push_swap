@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:00:05 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/11 16:49:58 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:17:10 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	is_arg_valid(char **str)
 	int	j;
 
 	i = 1;
+	if (!is_int(str))
+		return (0);
 	while (str[i])
 	{
 		j = 0;
@@ -69,11 +71,27 @@ int	is_arg_valid(char **str)
 	return (1);
 }
 
-int	ft_atoi(char *str)
+int	is_int(char **str)
 {
-	int	sign;
-	int	res;
 	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_atoi(str[i]) >= -2147483648 && ft_atoi(str[i]) <= 2147483647
+			&& str[i][0] != '\0')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+long	ft_atoi(char *str)
+{
+	long	sign;
+	long	res;
+	long	i;
 
 	i = 0;
 	sign = 1;

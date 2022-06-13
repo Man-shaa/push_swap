@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:00:25 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/11 18:24:10 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:05 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	int				content;
+	int			content;
 	int				index;
 	struct s_list	*next;
 }				t_list;
@@ -42,15 +42,15 @@ int		rotate_stack(t_list **stack, char c);
 void	indexing(t_list *list);
 int		find_index(t_list *stack, int x);
 int		get_max_bits(t_list *lst);
-int	get_max_bits_index(t_list *lst);
+int		get_max_bits_index(t_list *lst);
 
 int		is_sort(t_list	*lst);
-int		ft_atoi(char *str);
+int		is_int(char **str);
+long 	ft_atoi(char *str);
 int		is_arg_valid(char **str);
 int		parsing(t_list *stack);
 
 int		parse(int ac, char **av);
-int		is_int(char **str);
 void	print_list(t_list **lst);
 void	print_index(t_list **lst);
 void	ft_putendl_fd(char *str, int fd);

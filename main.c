@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:12:08 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/11 18:11:55 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:14:06 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	print_list(t_list **lst)
 
 	if (!*lst || !lst)
 		return ;
+	printf("\n");
 	tmp = *lst;
 	while (tmp)
 	{
