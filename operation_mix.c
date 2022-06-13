@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:06:29 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:41:28 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:37:58 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 
 int	rr(t_list **stack_a, t_list **stack_b)
 {
-	if ((rotate_stack(stack_a, 's') == -1) || (rotate_stack(stack_b, 's') == -1))
+	if ((rotate_stack(stack_a, 's') == -1)
+		|| (rotate_stack(stack_b, 's') == -1))
 		return (-1);
 	ft_putendl_fd("rr", 1);
 	return (0);

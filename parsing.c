@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:00:05 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/13 15:17:10 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:01:06 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_sort(t_list	*lst)
 	return (1);
 }
 
-int	parsing(t_list *stack)
+int	find_duplicate(t_list *stack)
 {
 	t_list	*save;
 

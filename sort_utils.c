@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:32 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/11 18:29:50 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:04:29 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,22 @@ int	find_index(t_list *stack, int x)
 	return (i);
 }
 
-int	get_max_bits_index(t_list *lst)
+int	get_max_bits(t_list **stack)
 {
-	int	n;
-	int	save_val;
+	t_list	*head;
+	int		max;
+	int		max_bits;
 
-	save_val = 0;
-	while (lst)
+	head = *stack;
+	max = head->index;
+	max_bits = 0;
+	while (head)
 	{
-		if (save_val < lst->index)
-			save_val = lst->index;
-		lst = lst->next;
+		if (head->index > max)
+			max = head->index;
+		head = head->next;
 	}
-	while (save_val != 0)
-	{
-		save_val /= 10;
-		n++;
-	}
-	return (n);
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
 }

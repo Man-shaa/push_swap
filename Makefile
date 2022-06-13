@@ -3,7 +3,7 @@ NAME = push_swap
 SRCS =	lst_utils.c \
 		lst_utils2.c \
 		main.c \
-		operation_call.c \
+		operation_mix.c \
 		operation.c \
 		parsing.c \
 		radix_sort.c \

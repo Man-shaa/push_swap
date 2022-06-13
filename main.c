@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:12:08 by msharifi          #+#    #+#             */
-/*   Updated: 2022/06/13 15:14:06 by msharifi         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:37:13 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	parse(int ac, char **av)
 	t_list	*stack;
 
 	if (!is_arg_valid(av))
-		return (write(1, "Error\n", 6), 0);
+		return (write(2, "Error\n", 6), 0);
 	if (ac <= 2)
 		return (0);
 	stack = init_list(ac, av);
-	if (!parsing(stack))
-		return (free_list(&stack), write(1, "Error\n", 6), 0);
+	if (!find_duplicate(stack))
+		return (free_list(&stack), write(2, "Error\n", 6), 0);
 	if (!is_sort(stack))
 		return (free_list(&stack), 0);
 	return (free_list(&stack), 1);
@@ -80,15 +80,12 @@ int	main(int ac, char **av)
 	stack_b = malloc(sizeof(t_list));
 	if (!stack_a || !stack_b)
 		return (0);
-	*stack_a = init_list(ac, av);	
+	*stack_a = init_list(ac, av);
 	*stack_b = NULL;
-	print_list(stack_a);
 	if (ft_lstsize(*stack_a) <= 5)
 		sort_small(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
-	print_list(stack_a);
-	print_index(stack_a);
 	free_list(stack_a);
 	free(stack_a);
 	free(stack_b);
