@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 21:50:02 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/14 23:05:57 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ int	set_up_stack(t_stack **stack_a, t_stack **stack_b)
 		return (free_all(stack_a, stack_b), 1);
 	indexing(*stack_a);
 	keep_3_in_a(stack_a, stack_b);
-	set_cost(*stack_a, *stack_b);
 	return (0);
 }
 
 void	keep_3_in_a(t_stack **stack_a, t_stack **stack_b)
 {
 	while (ft_lstsize(*stack_a) > 3)
-	{
 		push(stack_a, stack_b, 'a');
-	}
 	sort_3(stack_a, 'a');
 	print_stack(*stack_a, "STACK A");
 	print_stack(*stack_b, "STACK B");
@@ -55,6 +52,7 @@ int	a_sorted(t_stack *stack_a, t_stack *tmp)
 	}
 	return (0);
 }
+
 void	find_pos_in_a(t_stack *stack_a, t_stack *tmp)
 {
 	if (a_sorted(stack_a, tmp))
@@ -76,20 +74,6 @@ void	find_pos_in_a(t_stack *stack_a, t_stack *tmp)
 		tmp->pos_in_a++;
 		stack_a = stack_a->next;
 	}
-}
-
-void	set_cost(t_stack *stack_a, t_stack *stack_b)
-{
-	t_stack	*tmp;
-
-	tmp = stack_b;
-	while (tmp)
-	{
-		find_pos_in_a(stack_a, tmp);
-		printf("Number : %d wants to be at pos [%d]\n", tmp->number, tmp->pos_in_a);
-		tmp = tmp->next;
-	}
-	// print_stack(stack_b, "COST STACK B");
 }
 
 void	indexing(t_stack *stack)

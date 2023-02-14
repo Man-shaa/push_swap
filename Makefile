@@ -3,7 +3,8 @@ NAME		=	push_swap
 OBJS_DIR	=	objs
 
 SRCS		=	main.c \
-				big_algo.c \
+				big_sort.c \
+				cost.c \
 				create.c \
 				free.c \
 				operations.c \

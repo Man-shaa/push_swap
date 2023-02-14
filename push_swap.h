@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 20:45:56 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/14 22:18:29 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	print_stack(t_stack *stack, char *name);
 
 // big_sort.c
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
+
+// cost.c
+void		set_cost(t_stack *stack_a, t_stack *stack_b);
+void		total_cost(t_stack *stack_a, t_stack *stack_b, t_stack *tmp);
+void		cost_to_top_b(t_stack *stack, t_stack *tmp);
+void		cost_setup_a(t_stack *stack, t_stack *tmp);
 
 // create.c
 t_stack		**create_stack(int ac, char **av, t_stack **stack);
@@ -59,7 +65,6 @@ int			set_up_stack(t_stack **stack_a, t_stack **stack_b);
 void		keep_3_in_a(t_stack **stack_a, t_stack **stack_b);
 int			a_sorted(t_stack *stack_a, t_stack *tmp);
 void		find_pos_in_a(t_stack *stack_a, t_stack *tmp);
-void		set_cost(t_stack *stack_a, t_stack *stack_b);
 void		indexing(t_stack *stack);
 
 // sort_small.c
