@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 02:22:19 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:16:09 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ typedef struct s_stack
 	int				number;
 	int				index;
 	int				cost;
+	int				cost_a;
+	int				cost_b;
 	int				pos_in_a;
+	int				pos_in_b;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -32,7 +35,7 @@ void		print_stack(t_stack *stack, char *name);
 // big_sort.c
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
 t_stack		*select_cheapest(t_stack *stack);
-void		get_cheap_top_b(t_stack **stack_b, t_stack *cheap);
+void		get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *cheap);
 void		setup_a(t_stack **stack_a, int pos);
 
 // cost.c
@@ -45,6 +48,11 @@ int			cost_setup_a(t_stack *stack, t_stack *tmp);
 t_stack		**create_stack(int ac, char **av, t_stack **stack);
 t_stack		*ft_lstnew(int number);
 int			add_last(t_stack **stack, int number);
+
+// double_operations.c
+void		rr(t_stack **stack_a, t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		ss(t_stack **stack_a, t_stack **stack_b);
 
 // free.c
 void		ft_free(void *addr);
@@ -67,6 +75,7 @@ int			is_sorted(t_stack *stack);
 int			a_sorted(t_stack *stack_a, t_stack *tmp);
 void		first_part_before_min(t_stack *stack, t_stack *tmp);
 void		find_pos_in_a(t_stack *stack_a, t_stack *tmp);
+void		find_pos_in_b(t_stack *stack, t_stack *tmp);
 
 // setup_stack.c
 int			set_up_stack(t_stack **stack_a, t_stack **stack_b);

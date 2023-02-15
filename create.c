@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:18:20 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:51:26 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 16:21:50 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ t_stack	*ft_lstnew(int number)
 	new->number = number;
 	new->index = 0;
 	new->cost = 0;
+	new->cost_a = 0;
+	new->cost_b = 0;
 	new->pos_in_a = 0;
+	new->pos_in_b = 0;
 	new->next = NULL;
 	return (new);
 }

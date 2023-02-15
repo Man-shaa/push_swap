@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 02:19:19 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:12:52 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,27 @@ int	set_up_stack(t_stack **stack_a, t_stack **stack_b)
 
 void	keep_3_in_a(t_stack **stack_a, t_stack **stack_b)
 {
+	int		i;
+	int		size;
+	int		j;
+
+	i = 0;
+	j = 0;
+	size = ft_lstsize(*stack_a) / 2;
+	while (i < ft_lstsize(*stack_a) && j < size)
+	{
+		if ((*stack_a)->index < size)
+		{
+			j++;
+			push(stack_a, stack_b, 'a');
+		}
+		else
+			rotate(stack_a, 'a');
+		i++;
+	}
 	while (ft_lstsize(*stack_a) > 3)
 		push(stack_a, stack_b, 'b');
 	sort_3(stack_a, 'a');
-	// print_stack(*stack_a, "STACK A");
-	// print_stack(*stack_b, "STACK B");
-	// printf("\n");
 }
 
 void	indexing(t_stack *stack)
@@ -57,14 +72,14 @@ void	rearrange_stack_a(t_stack **stack_a)
 	t_stack	*travel;
 	int		i;
 
-	i = 1;
+	i = 0;
 	travel = *stack_a;
 	if (is_sorted(*stack_a))
 		return ;
-	while (travel->next && travel->index < travel->next->index)
+	while (travel && travel->index != 0)
 	{
-		travel = travel->next;
 		i++;
+		travel = travel->next;
 	}
 	setup_a(stack_a, i);
 }

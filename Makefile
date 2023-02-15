@@ -5,6 +5,7 @@ OBJS_DIR	=	objs
 SRCS		=	main.c \
 				big_sort.c \
 				cost.c \
+				double_operations.c \
 				create.c \
 				free.c \
 				operations.c \

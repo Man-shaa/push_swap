@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:01:37 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:50:56 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:54:15 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	big_sort(t_stack **stack_a, t_stack **stack_b)
 		set_cost(*stack_a, *stack_b);
 		cheap = select_cheapest(*stack_b);
 		// printf("	Cheapest : %d with %d cost\n\n", cheap->number, cheap->cost);
-		get_cheap_top_b(stack_b, cheap);
-		setup_a(stack_a, cheap->pos_in_a);
+		get_cheap_top_b(stack_a, stack_b, cheap);
+		if (cheap->cost_a != 0)
+			setup_a(stack_a, cheap->pos_in_a);
 		push(stack_b, stack_a, 'a');
 		// print_stack(*stack_a, "AFTER OP STACK A");
 		// print_stack(*stack_b, "AFTER OP STACK B");
@@ -55,32 +56,60 @@ t_stack	*select_cheapest(t_stack *stack)
 	return (NULL);
 }
 
-void	get_cheap_top_b(t_stack **stack_b, t_stack *cheap)
+void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
+{
+	int	mediane_a;
+	int	mediane_b;
+
+	mediane_a = ft_lstsize(*stack_a) / 2 + 1;
+	mediane_b = ft_lstsize(*stack_b) / 2 + 1;
+	if (cheap->pos_in_b < mediane_b && cheap->pos_in_a < mediane_a)
+	{
+		while (cheap->pos_in_b > 0 && cheap->pos_in_a > 0)
+		{
+			cheap->pos_in_b--;
+			cheap->pos_in_a--;
+			rr(stack_a, stack_b);
+		}
+	}
+	else if (cheap->pos_in_b > mediane_b && cheap->pos_in_a > mediane_a)
+	{
+		while (cheap->pos_in_b < ft_lstsize(*stack_b)
+			&& cheap->pos_in_a < ft_lstsize(*stack_a))
+		{
+			cheap->pos_in_b++;
+			cheap->pos_in_a++;
+			rrr(stack_a, stack_b);
+		}
+		if (cheap->pos_in_b == ft_lstsize(*stack_b))
+			cheap->pos_in_b = 0;
+		if (cheap->pos_in_a == ft_lstsize(*stack_a))
+			cheap->pos_in_a = 0;
+	}
+}
+
+void	get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 {
 	t_stack	*travel;
-	int		pos_in_b;
 
 	travel = *stack_b;
-	pos_in_b = 0;
-	while (travel && travel != cheap)
+	do_both_op(stack_a, stack_b, cheap);
+	if (cheap->cost_b == 0)
+		return ;
+	if (cheap->pos_in_b < ft_lstsize(*stack_b) / 2 + 1)
 	{
-		pos_in_b++;
-		travel = travel->next;
-	}
-	if (pos_in_b < ft_lstsize(*stack_b) / 2 + 1)
-	{
-		while (pos_in_b > 0)
+		while (cheap->pos_in_b > 0)
 		{
 			rotate(stack_b, 'b');
-			pos_in_b--;
+			cheap->pos_in_b--;
 		}
 		return ;
 	}
-	pos_in_b = ft_lstsize(*stack_b) - pos_in_b;
-	while (pos_in_b > 0)
+	cheap->pos_in_b = ft_lstsize(*stack_b) - cheap->pos_in_b;
+	while (cheap->pos_in_b > 0)
 	{
 		rev_rotate(stack_b, 'b');
-		pos_in_b--;
+		cheap->pos_in_b--;
 	}
 }
 
