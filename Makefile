@@ -3,6 +3,8 @@ NAME		=	push_swap
 OBJS_DIR	=	objs
 
 SRCS		=	main.c \
+				GNL/get_next_line.c \
+				GNL/get_next_line_utils.c \
 				big_sort.c \
 				cost.c \
 				double_operations.c \
@@ -31,13 +33,14 @@ CFLAGS		=	-Wall -Werror -Wextra -g3
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o ${NAME} -lreadline
+		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_DIR) :
 	@ mkdir -p $@
+	@ mkdir -p objs/GNL
 
 all:		${NAME}
 

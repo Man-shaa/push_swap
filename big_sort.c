@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:01:37 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 17:54:15 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:38:46 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,8 @@ t_stack	*select_cheapest(t_stack *stack)
 
 void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 {
-	int	mediane_a;
-	int	mediane_b;
-
-	mediane_a = ft_lstsize(*stack_a) / 2 + 1;
-	mediane_b = ft_lstsize(*stack_b) / 2 + 1;
-	if (cheap->pos_in_b < mediane_b && cheap->pos_in_a < mediane_a)
+	if (cheap->pos_in_b < ft_lstsize(*stack_b) / 2 + 1
+		&& cheap->pos_in_a < ft_lstsize(*stack_a) / 2 + 1)
 	{
 		while (cheap->pos_in_b > 0 && cheap->pos_in_a > 0)
 		{
@@ -72,7 +68,8 @@ void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 			rr(stack_a, stack_b);
 		}
 	}
-	else if (cheap->pos_in_b > mediane_b && cheap->pos_in_a > mediane_a)
+	else if (cheap->pos_in_b > ft_lstsize(*stack_b) / 2 + 1
+		&& cheap->pos_in_a > ft_lstsize(*stack_a) / 2 + 1)
 	{
 		while (cheap->pos_in_b < ft_lstsize(*stack_b)
 			&& cheap->pos_in_a < ft_lstsize(*stack_a))
@@ -88,28 +85,28 @@ void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 	}
 }
 
-void	get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
+void	get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *c)
 {
 	t_stack	*travel;
 
 	travel = *stack_b;
-	do_both_op(stack_a, stack_b, cheap);
-	if (cheap->cost_b == 0)
+	do_both_op(stack_a, stack_b, c);
+	if (c->cost_b == 0)
 		return ;
-	if (cheap->pos_in_b < ft_lstsize(*stack_b) / 2 + 1)
+	if (c->pos_in_b < ft_lstsize(*stack_b) / 2 + 1)
 	{
-		while (cheap->pos_in_b > 0)
+		while (c->pos_in_b > 0)
 		{
 			rotate(stack_b, 'b');
-			cheap->pos_in_b--;
+			c->pos_in_b--;
 		}
 		return ;
 	}
-	cheap->pos_in_b = ft_lstsize(*stack_b) - cheap->pos_in_b;
-	while (cheap->pos_in_b > 0)
+	c->pos_in_b = ft_lstsize(*stack_b) - c->pos_in_b;
+	while (c->pos_in_b > 0)
 	{
 		rev_rotate(stack_b, 'b');
-		cheap->pos_in_b--;
+		c->pos_in_b--;
 	}
 }
 

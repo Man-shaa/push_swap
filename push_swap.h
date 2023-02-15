@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:16:09 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:38:00 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "stdio.h"
 # include "stdlib.h"
+# include "GNL/get_next_line.h"
 # include "unistd.h"
 # include "stddef.h"
 
@@ -35,7 +36,7 @@ void		print_stack(t_stack *stack, char *name);
 // big_sort.c
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
 t_stack		*select_cheapest(t_stack *stack);
-void		get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *cheap);
+void		get_cheap_top_b(t_stack **stack_a, t_stack **stack_b, t_stack *c);
 void		setup_a(t_stack **stack_a, int pos);
 
 // cost.c
@@ -92,7 +93,6 @@ void		sort_4(t_stack **stack_a, t_stack **stack_b, int x);
 void		sort_5(t_stack **stack_a, t_stack **stack_b);
 
 // utils.c
-int			ft_strlen(char *str);
 int			err_msg(char *str, char *end, int ret);
 long long	ft_atoi(char *str);
 int			ft_lstsize(t_stack *stack);
