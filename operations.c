@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:38:53 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 20:29:00 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:30:04 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,26 @@ void	push(t_stack **stack_1, t_stack **stack_2, char c)
 	save_1->next = *stack_2;
 	*stack_2 = save_1;
 	if (c == 'a')
-		write(STDIN_FILENO, "pa\n", 3);
+		write(STDOUT_FILENO, "pa\n", 3);
 	else if (c == 'b')
-		write(STDIN_FILENO, "pb\n", 3);
+		write(STDOUT_FILENO, "pb\n", 3);
 }
 
 // premier devient dernier ---- SHIFT UP
 void	rotate(t_stack **stack, char c)
 {
 	t_stack	*first;
-	t_stack	*last;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	first = *stack;
 	*stack = first->next;
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	last->next = first;
+	ft_lstlast(*stack)->next = first;
 	first->next = NULL;
 	if (c == 'a')
-		write(STDIN_FILENO, "ra\n", 3);
+		write(STDOUT_FILENO, "ra\n", 3);
 	else if (c == 'b')
-		write(STDIN_FILENO, "rb\n", 3);
+		write(STDOUT_FILENO, "rb\n", 3);
 }
 
 void	rev_rotate(t_stack **stack, char c)
@@ -56,19 +52,17 @@ void	rev_rotate(t_stack **stack, char c)
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
-	last = *stack;
+	last = ft_lstlast(*stack);
 	prev_last = *stack;
-	while (last->next)
-		last = last->next;
-	while (prev_last->next && prev_last->next != last)
+	while (prev_last->next && prev_last->next != ft_lstlast(*stack))
 		prev_last = prev_last->next;	
 	prev_last->next = NULL;
 	last->next = *stack;
 	*stack = last;
 	if (c == 'a')
-		write(STDIN_FILENO, "rra\n", 4);
+		write(STDOUT_FILENO, "rra\n", 4);
 	else if (c == 'b')
-		write(STDIN_FILENO, "rrb\n", 4);
+		write(STDOUT_FILENO, "rrb\n", 4);
 }
 
 void	swap(t_stack **stack, char c)
@@ -82,7 +76,7 @@ void	swap(t_stack **stack, char c)
 	first->next = (*stack)->next;
 	(*stack)->next = first;
 	if (c == 'a')
-		write(STDIN_FILENO, "sa\n", 3);
+		write(STDOUT_FILENO, "sa\n", 3);
 	else if (c == 'b')
-		write(STDIN_FILENO, "sb\n", 3);
+		write(STDOUT_FILENO, "sb\n", 3);
 }

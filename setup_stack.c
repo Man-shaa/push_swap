@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 23:05:57 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:30:23 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,18 @@ int	set_up_stack(t_stack **stack_a, t_stack **stack_b)
 void	keep_3_in_a(t_stack **stack_a, t_stack **stack_b)
 {
 	while (ft_lstsize(*stack_a) > 3)
-		push(stack_a, stack_b, 'a');
+		push(stack_a, stack_b, 'b');
 	sort_3(stack_a, 'a');
-	print_stack(*stack_a, "STACK A");
-	print_stack(*stack_b, "STACK B");
-	printf("\n");
+	// print_stack(*stack_a, "STACK A");
+	// print_stack(*stack_b, "STACK B");
+	// printf("\n");
 }
 
 int	a_sorted(t_stack *stack_a, t_stack *tmp)
 {
-	t_stack	*last;
-
-	last = stack_a;
 	if (is_sorted(stack_a))
 	{
-		while (last->next)
-			last = last->next;
-		if (tmp->index > last->index)
+		if (tmp->index > ft_lstlast(stack_a)->index)
 			return (1);
 		while (stack_a && tmp->index > stack_a->index)
 		{
@@ -53,26 +48,39 @@ int	a_sorted(t_stack *stack_a, t_stack *tmp)
 	return (0);
 }
 
-void	find_pos_in_a(t_stack *stack_a, t_stack *tmp)
+void	first_part_before_min(t_stack *stack, t_stack *tmp)
 {
-	if (a_sorted(stack_a, tmp))
-		return ;
-	while (stack_a && stack_a->next && stack_a->index < stack_a->next->index)
+	while (stack->index < stack->next->index)
 	{
-		if (tmp->index < stack_a->index)
+		if (tmp->index < stack->index)
 			return ;
+		stack = stack->next;
 		tmp->pos_in_a++;
-		stack_a = stack_a->next;
 	}
-	if (stack_a->next && tmp->index > stack_a->index && tmp->index > stack_a->next->index)
+	if (stack->index < tmp->index && stack->index > stack->next->index)
 	{
+		stack = stack->next;
 		tmp->pos_in_a++;
+	}
+}
+
+void	find_pos_in_a(t_stack *stack, t_stack *tmp)
+{
+	if (a_sorted(stack, tmp))
 		return ;
-	}
-	while (stack_a && tmp->index > stack_a->index)
+	if (tmp->index > ft_lstlast(stack)->index)
+		return (first_part_before_min(stack, tmp));
+	while (stack->index < stack->next->index)
 	{
+		stack = stack->next;
 		tmp->pos_in_a++;
-		stack_a = stack_a->next;
+	}
+	stack = stack->next;
+	tmp->pos_in_a++;
+	while (stack && tmp->index > stack->index)
+	{
+		stack = stack->next;
+		tmp->pos_in_a++;
 	}
 }
 

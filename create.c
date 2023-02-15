@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:18:20 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 19:35:48 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 00:57:52 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ t_stack	*ft_lstnew(int number)
 
 int	add_last(t_stack **stack, int number)
 {
-	t_stack	*last;
 	t_stack	*new;
 
-	last = *stack;
 	new = ft_lstnew(number);
 	if (!new)
 		return (1);
@@ -59,8 +57,6 @@ int	add_last(t_stack **stack, int number)
 		*stack = new;
 		return (0);
 	}
-	while (last->next)
-		last = last->next;
-	last->next = new;
+	ft_lstlast(*stack)->next = new;
 	return (0);
 }

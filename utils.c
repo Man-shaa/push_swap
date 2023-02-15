@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:05:05 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 18:46:42 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/14 23:55:51 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,11 @@ int	ft_lstsize(t_stack *stack)
 		stack = stack->next;
 	}
 	return (i);
+}
+
+t_stack	*ft_lstlast(t_stack *stack)
+{
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 22:18:29 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 00:54:57 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,16 @@ typedef struct s_stack
 void	print_stack(t_stack *stack, char *name);
 
 // big_sort.c
+t_stack		*select_cheapest(t_stack *stack);
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
+void		get_cheap_top_b(t_stack **stack_b, t_stack *cheap);
+void		setup_a(t_stack **stack_a, int pos);
 
 // cost.c
 void		set_cost(t_stack *stack_a, t_stack *stack_b);
 void		total_cost(t_stack *stack_a, t_stack *stack_b, t_stack *tmp);
-void		cost_to_top_b(t_stack *stack, t_stack *tmp);
-void		cost_setup_a(t_stack *stack, t_stack *tmp);
+int			cost_to_top_b(t_stack *stack, t_stack *tmp);
+int			cost_setup_a(t_stack *stack, t_stack *tmp);
 
 // create.c
 t_stack		**create_stack(int ac, char **av, t_stack **stack);
@@ -77,5 +80,6 @@ int			ft_strlen(char *str);
 int			err_msg(char *str, char *end, int ret);
 long long	ft_atoi(char *str);
 int			ft_lstsize(t_stack *stack);
+t_stack		*ft_lstlast(t_stack *stack);
 
 #endif
