@@ -1,10 +1,14 @@
 NAME		=	push_swap
 
+BONUS	=	checker
+
 OBJS_DIR	=	objs
 
+B_OBJS_DIR	=	objs/bonus
+
 SRCS		=	main.c \
-				GNL/get_next_line.c \
-				GNL/get_next_line_utils.c \
+				bonus/GNL/get_next_line.c \
+				bonus/GNL/get_next_line_utils.c \
 				big_sort.c \
 				cost.c \
 				double_operations.c \
@@ -16,8 +20,13 @@ SRCS		=	main.c \
 				setup_stack.c \
 				sort_small.c \
 				utils.c
-				
+
+SRCS_BONUS	=	main.c \
+				checker.c
+
 OBJS		=	${SRCS:%.c=${OBJS_DIR}/%.o}
+
+OBJS_BONUS	=	${SRCS_BONUS:%.c=${B_OBJS_DIR}/%.o}
 
 CC			=	clang
 
@@ -35,24 +44,32 @@ CFLAGS		=	-Wall -Werror -Wextra -g3
 $(NAME):	${OBJS}
 		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
+$(BONUS):	${OBJS} ${OBJS_BONUS}
+		${CC} ${CFLAGS} ${OBJS_BONUS} -o ${BONUS}
+
 $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_DIR) :
 	@ mkdir -p $@
-	@ mkdir -p objs/GNL
+	@ mkdir -p objs/bonus/GNL
+	@ mkdir -p objs/bonus
 
 all:		${NAME}
 
+bonus:	${BONUS}
+
 clean:		
 		${RM} ${OBJS}
+		${RM} ${OBJS_BONUS}
 		${RM} ${OBJS_DIR}
 
 fclean:		clean
 		${RM} ${NAME}
+		${RM} ${BONUS}
 		@echo "\n${GREEN}Everything cleaned${DEFAULT}"
 
 re:			fclean
 		$(MAKE) all -j
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

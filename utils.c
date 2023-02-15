@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:05:05 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:35:28 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:00:00 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	err_msg(char *str, char *end, int ret)
 {
+	if (str || end)
+		write(STDERR_FILENO, "Error\n", 6);
 	if (str)
 		write(STDERR_FILENO, str, ft_strlen(str));
 	if (end)

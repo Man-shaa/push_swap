@@ -6,18 +6,18 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:38:00 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:27:30 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "stdio.h"
-# include "stdlib.h"
-# include "GNL/get_next_line.h"
-# include "unistd.h"
-# include "stddef.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include "bonus/GNL/get_next_line.h"
+# include <unistd.h>
+# include <stddef.h>
 
 typedef struct s_stack
 {
@@ -97,5 +97,9 @@ int			err_msg(char *str, char *end, int ret);
 long long	ft_atoi(char *str);
 int			ft_lstsize(t_stack *stack);
 t_stack		*ft_lstlast(t_stack *stack);
+
+// ***************************** BONUS *****************************
+
+// checker.c
 
 #endif
