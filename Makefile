@@ -9,6 +9,7 @@ SRCS		=	main.c \
 				free.c \
 				operations.c \
 				parsing.c \
+				search_pos.c \
 				setup_stack.c \
 				sort_small.c \
 				utils.c

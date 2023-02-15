@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:09:49 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:24:28 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:49:28 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ int	main(int ac, char **av)
 	if (ac <= 2)
 		return (1);
 	if (ac <= 6)
-	{
-		// printf("Mets + de 5 nombres chakal\n");
-		return (2);
-	}
+		return (err_msg("args > 5 for now", NULL, 2));
 	if (parsing(ac, av))
 		return (3);
 	stack_a = create_stack(ac, av, stack_a);
@@ -50,7 +47,6 @@ int	main(int ac, char **av)
 	if (set_up_stack(stack_a, stack_b))
 		return (0);
 	big_sort(stack_a, stack_b);
-	// print_stack(*stack_a, "FINAL STACK A");
 	free_all(stack_a, stack_b);
 	return (0);
 }

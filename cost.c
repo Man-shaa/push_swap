@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:57:13 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:24:22 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:51:11 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,12 @@ void	set_cost(t_stack *stack_a, t_stack *stack_b)
 
 void	total_cost(t_stack *stack_a, t_stack *stack_b, t_stack *tmp)
 {
-	int	save;
 	cost_to_top_b(stack_b, tmp);
-	// printf("(%d)	Cost to get on top of B : %d\n", tmp->number, tmp->cost);
-	save = tmp->cost;
 	cost_setup_a(stack_a, tmp);
-	// printf("(%d)	Cost to setup A : %d\n", tmp->number, tmp->cost - save);
 	tmp->cost += 1;
 }
 
-int		cost_to_top_b(t_stack *stack, t_stack *tmp)
+int	cost_to_top_b(t_stack *stack, t_stack *tmp)
 {
 	int		pos_in_b;
 	int		cost_ret;
@@ -65,7 +61,7 @@ int		cost_to_top_b(t_stack *stack, t_stack *tmp)
 	return (cost_ret);
 }
 
-int		cost_setup_a(t_stack *stack, t_stack *tmp)
+int	cost_setup_a(t_stack *stack, t_stack *tmp)
 {
 	int	cost_ret;
 

@@ -6,13 +6,13 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:18:20 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 00:57:52 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:51:26 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	**create_stack(int ac, char ** av, t_stack **stack)
+t_stack	**create_stack(int ac, char **av, t_stack **stack)
 {
 	int	i;
 

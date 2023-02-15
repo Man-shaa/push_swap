@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 00:54:57 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:50:18 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_stack
 	struct s_stack	*next;
 }				t_stack;
 
-void	print_stack(t_stack *stack, char *name);
+void		print_stack(t_stack *stack, char *name);
 
 // big_sort.c
-t_stack		*select_cheapest(t_stack *stack);
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
+t_stack		*select_cheapest(t_stack *stack);
 void		get_cheap_top_b(t_stack **stack_b, t_stack *cheap);
 void		setup_a(t_stack **stack_a, int pos);
 
@@ -63,17 +63,21 @@ int			check_only_numbers_and_int(int ac, char **av);
 int			check_duplicate(int ac, char **av);
 int			is_sorted(t_stack *stack);
 
+// search_pos.c
+int			a_sorted(t_stack *stack_a, t_stack *tmp);
+void		first_part_before_min(t_stack *stack, t_stack *tmp);
+void		find_pos_in_a(t_stack *stack_a, t_stack *tmp);
+
 // setup_stack.c
 int			set_up_stack(t_stack **stack_a, t_stack **stack_b);
 void		keep_3_in_a(t_stack **stack_a, t_stack **stack_b);
-int			a_sorted(t_stack *stack_a, t_stack *tmp);
-void		find_pos_in_a(t_stack *stack_a, t_stack *tmp);
 void		indexing(t_stack *stack);
+void		rearrange_stack_a(t_stack **stack_a);
+void		reset_data(t_stack *stack);
 
 // sort_small.c
 void		sort_2(t_stack **stack, char c);
 void		sort_3(t_stack **stack, char c);
-
 
 // utils.c
 int			ft_strlen(char *str);

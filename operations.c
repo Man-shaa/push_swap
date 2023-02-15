@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:38:53 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:30:04 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:50:33 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rev_rotate(t_stack **stack, char c)
 	last = ft_lstlast(*stack);
 	prev_last = *stack;
 	while (prev_last->next && prev_last->next != ft_lstlast(*stack))
-		prev_last = prev_last->next;	
+		prev_last = prev_last->next;
 	prev_last->next = NULL;
 	last->next = *stack;
 	*stack = last;

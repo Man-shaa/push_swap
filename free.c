@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:16:29 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/14 18:35:57 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:51:37 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_free(void *addr)
 
 void	free_list(t_stack **stack)
 {
-	t_stack *before;
+	t_stack	*before;
 	t_stack	*tmp;
 
 	before = *stack;
