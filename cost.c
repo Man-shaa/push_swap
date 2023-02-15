@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:57:13 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:51:11 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:27:10 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,9 @@ int	cost_to_top_b(t_stack *stack, t_stack *tmp)
 {
 	int		pos_in_b;
 	int		cost_ret;
-	t_stack	*travel;
 
-	pos_in_b = 0;
-	cost_ret = 0;
-	travel = stack;
-	while (travel && travel->index != tmp->index)
-	{
-		pos_in_b++;
-		cost_ret++;
-		travel = travel->next;
-	}
+	pos_in_b = find_index(stack, tmp->index);
+	cost_ret = pos_in_b;
 	if (pos_in_b < ft_lstsize(stack) / 2 + 1)
 	{
 		cost_ret = pos_in_b;

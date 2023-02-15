@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:50:18 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:22:19 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,11 @@ void		rearrange_stack_a(t_stack **stack_a);
 void		reset_data(t_stack *stack);
 
 // sort_small.c
-void		sort_2(t_stack **stack, char c);
+void		small_sort(t_stack **stack_a, t_stack **stack_b);
+int			find_index(t_stack *stack, int x);
 void		sort_3(t_stack **stack, char c);
+void		sort_4(t_stack **stack_a, t_stack **stack_b, int x);
+void		sort_5(t_stack **stack_a, t_stack **stack_b);
 
 // utils.c
 int			ft_strlen(char *str);

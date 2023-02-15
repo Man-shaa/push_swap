@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 01:43:06 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:19:19 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	set_up_stack(t_stack **stack_a, t_stack **stack_b)
 	if (is_sorted(*stack_a))
 		return (free_all(stack_a, stack_b), 1);
 	indexing(*stack_a);
-	keep_3_in_a(stack_a, stack_b);
+	if (ft_lstsize(*stack_a) > 5)
+		keep_3_in_a(stack_a, stack_b);
 	return (0);
 }
 
