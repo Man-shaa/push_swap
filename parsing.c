@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:50:29 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 02:35:52 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:26:29 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	parsing(int ac, char **av)
 {
-	if (ac <= 2)
-		return (err_msg("tuto : arg > 2", NULL, 1));
 	if (check_only_numbers_and_int(ac, av))
 		return (2);
 	if (check_duplicate(ac, av))

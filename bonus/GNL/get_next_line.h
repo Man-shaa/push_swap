@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 18:19:50 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 21:22:05 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:26:31 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include "../../push_swap.h"
 # include <sys/types.h>
 # include <sys/stat.h>
 
-int		ft_strlen(char *str);
 int		ft_strchr(char *str);
 char	*ft_strcpy(char *s1, char *s2);
 char	*ft_strdup(char *src);

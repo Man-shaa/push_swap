@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:01:37 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:38:46 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:01:22 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 		{
 			cheap->pos_in_b--;
 			cheap->pos_in_a--;
-			rr(stack_a, stack_b);
+			rr(stack_a, stack_b, 'd');
 		}
 	}
 	else if (cheap->pos_in_b > ft_lstsize(*stack_b) / 2 + 1
@@ -76,7 +76,7 @@ void	do_both_op(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 		{
 			cheap->pos_in_b++;
 			cheap->pos_in_a++;
-			rrr(stack_a, stack_b);
+			rrr(stack_a, stack_b, 'd');
 		}
 		if (cheap->pos_in_b == ft_lstsize(*stack_b))
 			cheap->pos_in_b = 0;

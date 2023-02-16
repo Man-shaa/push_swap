@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 21:27:30 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:12:21 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ t_stack		*ft_lstnew(int number);
 int			add_last(t_stack **stack, int number);
 
 // double_operations.c
-void		rr(t_stack **stack_a, t_stack **stack_b);
-void		rrr(t_stack **stack_a, t_stack **stack_b);
-void		ss(t_stack **stack_a, t_stack **stack_b);
+void		rr(t_stack **stack_a, t_stack **stack_b, char c);
+void		rrr(t_stack **stack_a, t_stack **stack_b, char c);
+void		ss(t_stack **stack_a, t_stack **stack_b, char c);
 
 // free.c
 void		ft_free(void *addr);
@@ -97,9 +97,13 @@ int			err_msg(char *str, char *end, int ret);
 long long	ft_atoi(char *str);
 int			ft_lstsize(t_stack *stack);
 t_stack		*ft_lstlast(t_stack *stack);
+int			ft_strlen(char *str);
 
 // ***************************** BONUS *****************************
 
 // checker.c
+int			checker(t_stack **stack_a, t_stack **stack_b);
+int			is_same(char *s1, char *s2);
+int			exec_op(t_stack **stack_a, t_stack **stack_b, char *line);
 
 #endif

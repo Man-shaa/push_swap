@@ -4,11 +4,11 @@ BONUS	=	checker
 
 OBJS_DIR	=	objs
 
+GNL_DIR		= bonus/GNL/
+
 B_OBJS_DIR	=	objs/bonus
 
 SRCS		=	main.c \
-				bonus/GNL/get_next_line.c \
-				bonus/GNL/get_next_line_utils.c \
 				big_sort.c \
 				cost.c \
 				double_operations.c \
@@ -21,12 +21,20 @@ SRCS		=	main.c \
 				sort_small.c \
 				utils.c
 
-SRCS_BONUS	=	main.c \
-				checker.c
+SRCS_BONUS	=	${GNL_DIR}get_next_line.c \
+				${GNL_DIR}get_next_line_utils.c \
+				double_operations.c \
+				create.c \
+				parsing.c \
+				free.c \
+				operations.c \
+				utils.c \
+				bonus/main.c \
+				bonus/checker.c
 
-OBJS		=	${SRCS:%.c=${OBJS_DIR}/%.o}
+OBJS		=	${SRCS:%.c=%.o}
 
-OBJS_BONUS	=	${SRCS_BONUS:%.c=${B_OBJS_DIR}/%.o}
+OBJS_BONUS	=	${SRCS_BONUS:%.c=%.o}
 
 CC			=	clang
 
@@ -44,7 +52,7 @@ CFLAGS		=	-Wall -Werror -Wextra -g3
 $(NAME):	${OBJS}
 		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
-$(BONUS):	${OBJS} ${OBJS_BONUS}
+$(BONUS):	${NAME} ${OBJS_BONUS}
 		${CC} ${CFLAGS} ${OBJS_BONUS} -o ${BONUS}
 
 $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)

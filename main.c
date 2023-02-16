@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:09:49 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:23:22 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:28:29 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (ac <= 2)
+		return (err_msg("tuto : arg > 2", NULL, 1));
 	if (parsing(ac, av))
-		return (3);
+		return (1);
 	stack_a = create_stack(ac, av, stack_a);
 	if (!stack_a)
-		return (err_msg("Malloc failed", NULL, 4));
+		return (err_msg("Malloc failed", NULL, 2));
 	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
-		return (free_all(stack_a, stack_b), err_msg("Malloc failed", NULL, 5));
+		return (free_all(stack_a, stack_b), err_msg("Malloc failed", NULL, 3));
 	if (set_up_stack(stack_a, stack_b))
 		return (0);
 	if (ac > 6)

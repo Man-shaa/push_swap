@@ -6,23 +6,23 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 18:18:45 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 21:27:41 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:27:03 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char *str)
-{
-	size_t	i;
+// int	ft_strlen(char *str)
+// {
+// 	size_t	i;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	if (!str)
+// 		return (0);
+// 	while (str[i])
+// 		i++;
+// 	return (i);
+// }
 
 int	ft_strchr(char *str)
 {
