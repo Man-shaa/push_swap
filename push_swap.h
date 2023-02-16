@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:38:15 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:40:48 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ t_stack		*ft_lstnew(int number);
 int			add_last(t_stack **stack, int number);
 int			ft_lstsize(t_stack *stack);
 t_stack		*ft_lstlast(t_stack *stack);
-
 
 // operations.c
 void		push(t_stack **stack_1, t_stack **stack_b, char c);

@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:18:20 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:01:37 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:40:42 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ t_stack	**create_stack(int ac, char **av, t_stack **stack)
 	}
 	return (stack);
 }
-
