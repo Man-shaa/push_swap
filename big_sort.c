@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:01:37 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 16:01:22 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:23:21 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,12 @@ int	big_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		set_cost(*stack_a, *stack_b);
 		cheap = select_cheapest(*stack_b);
-		// printf("	Cheapest : %d with %d cost\n\n", cheap->number, cheap->cost);
 		get_cheap_top_b(stack_a, stack_b, cheap);
 		if (cheap->cost_a != 0)
 			setup_a(stack_a, cheap->pos_in_a);
 		push(stack_b, stack_a, 'a');
-		// print_stack(*stack_a, "AFTER OP STACK A");
-		// print_stack(*stack_b, "AFTER OP STACK B");
 		reset_data(*stack_b);
 	}
-	// print_stack(*stack_a, "BEFORE A");
 	rearrange_stack_a(stack_a);
 	return (0);
 }

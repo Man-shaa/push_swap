@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:57:13 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 17:49:48 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:23:48 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	set_cost(t_stack *stack_a, t_stack *stack_b)
 		cost_setup_a(stack_a, tmp);
 		tmp->cost += 1;
 		tmp->cost = tmp->cost_a + tmp->cost_b;
-		// printf("Number : %d wants to be at pos [%d]	|	Cost : %d\n", tmp->number, tmp->pos_in_a, tmp->cost);
 		tmp = tmp->next;
 	}
 }

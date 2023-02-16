@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:49:44 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 16:30:10 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:36:37 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ int	is_same(char *s1, char *s2)
 
 int	exec_op(t_stack **stack_a, t_stack **stack_b, char *line)
 {
-	if (is_same(line, "sa\n"))
+	if (is_same(line, "pa\n"))
+		return (push(stack_b, stack_a, 'x'), 0);
+	else if (is_same(line, "pb\n"))
+		return (push(stack_a, stack_b, 'x'), 0);
+	else if (is_same(line, "sa\n"))
 		return (swap(stack_a, 'x'), 0);
 	else if (is_same(line, "sb\n"))
 		return (swap(stack_b, 'x'), 0);
