@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:26:29 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:35:42 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:39:25 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,18 @@ void	small_sort(t_stack **stack_a, t_stack **stack_b)
 		sort_5(stack_a, stack_b);
 }
 
-
-void	sort_3_2(t_stack **stack_a)
+void	sort_3(t_stack **stack_a)
 {
 	if (((*stack_a)->number > (*stack_a)->next->number)
+		&& ((*stack_a)->number < (*stack_a)->next->next->number))
+		swap(stack_a, 'a');
+	else if (((*stack_a)->number > (*stack_a)->next->next->number)
+		&& ((*stack_a)->next->number > (*stack_a)->next->next->number)
+		&& ((*stack_a)->number < (*stack_a)->next->number))
+		rev_rotate(stack_a, 'a');
+	else if (((*stack_a)->number > (*stack_a)->next->number)
 		&& ((*stack_a)->next->number < (*stack_a)->next->next->number))
-	{
 		rotate(stack_a, 'a');
-	}
 	else if (((*stack_a)->number < (*stack_a)->next->next->number)
 		&& ((*stack_a)->next->number > (*stack_a)->next->next->number))
 	{
@@ -48,23 +52,6 @@ void	sort_3_2(t_stack **stack_a)
 		swap(stack_a, 'a');
 		rev_rotate(stack_a, 'a');
 	}
-}
-
-void	sort_3(t_stack **stack_a)
-{
-	if (((*stack_a)->number > (*stack_a)->next->number)
-		&& ((*stack_a)->number < (*stack_a)->next->next->number))
-	{
-		swap(stack_a, 'a');
-	}
-	else if (((*stack_a)->number > (*stack_a)->next->next->number)
-		&& ((*stack_a)->next->number > (*stack_a)->next->next->number)
-		&& ((*stack_a)->number < (*stack_a)->next->number))
-	{
-		rev_rotate(stack_a, 'a');
-	}
-	else
-		sort_3_2(stack_a);
 }
 
 void	sort_4(t_stack **stack_a, t_stack **stack_b, int x)
