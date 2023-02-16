@@ -1,25 +1,27 @@
 NAME		=	push_swap
 
-BONUS	=	checker
+BONUS		=	checker
 
 OBJS_DIR	=	objs
 
-GNL_DIR		= bonus/GNL/
+ALGO_DIR	=	algo/
+
+GNL_DIR		=	bonus/GNL/
 
 B_OBJS_DIR	=	objs/bonus
 
 SRCS		=	main.c \
-				big_sort.c \
-				cost.c \
+				${ALGO_DIR}big_sort.c \
+				${ALGO_DIR}cost.c \
 				double_operations.c \
 				create.c \
 				free.c \
 				list.c \
 				operations.c \
 				parsing.c \
-				search_pos.c \
-				setup_stack.c \
-				sort_small.c \
+				${ALGO_DIR}search_pos.c \
+				${ALGO_DIR}setup_stack.c \
+				${ALGO_DIR}sort_small.c \
 				utils.c
 
 SRCS_BONUS	=	${GNL_DIR}get_next_line.c \
@@ -34,9 +36,9 @@ SRCS_BONUS	=	${GNL_DIR}get_next_line.c \
 				bonus/main.c \
 				bonus/checker.c
 
-OBJS		=	${SRCS:%.c=%.o}
+OBJS		=	${SRCS:%.c=${OBJS_DIR}/%.o}
 
-OBJS_BONUS	=	${SRCS_BONUS:%.c=%.o}
+OBJS_BONUS	=	${SRCS_BONUS:%.c=${OBJS_DIR}/%.o}
 
 CC			=	clang
 
@@ -64,6 +66,7 @@ $(OBJS_DIR) :
 	@ mkdir -p $@
 	@ mkdir -p objs/bonus/GNL
 	@ mkdir -p objs/bonus
+	@ mkdir -p objs/algo
 
 all:		${NAME}
 

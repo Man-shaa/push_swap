@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:57:13 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 17:23:48 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:10:48 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	set_cost(t_stack *stack_a, t_stack *stack_b)
 {

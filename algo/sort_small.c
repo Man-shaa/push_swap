@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:26:29 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:39:25 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:10:57 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	small_sort(t_stack **stack_a, t_stack **stack_b)
 {

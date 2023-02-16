@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:39:52 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 17:59:08 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:10:49 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	a_sorted(t_stack *stack_a, t_stack *tmp)
 {

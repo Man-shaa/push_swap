@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 21:48:10 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:10:55 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	set_up_stack(t_stack **stack_a, t_stack **stack_b)
 {
