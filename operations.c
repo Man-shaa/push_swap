@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:38:53 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 02:30:20 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:04:11 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	push(t_stack **stack_1, t_stack **stack_2, char c)
 		write(STDOUT_FILENO, "pb\n", 3);
 }
 
-// premier devient dernier ---- SHIFT UP
 void	rotate(t_stack **stack, char c)
 {
 	t_stack	*first;

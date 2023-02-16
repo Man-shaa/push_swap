@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:26:29 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 20:12:49 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:35:42 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,44 +20,51 @@ void	small_sort(t_stack **stack_a, t_stack **stack_b)
 	if (size == 2 && (*stack_a)->index > (*stack_a)->next->index)
 		swap(stack_a, 'a');
 	if (size == 3)
-		sort_3(stack_a, 'a');
+		sort_3(stack_a);
 	if (size == 4)
 		sort_4(stack_a, stack_b, 0);
 	if (size == 5)
 		sort_5(stack_a, stack_b);
 }
 
-int	find_index(t_stack *stack, int x)
-{
-	int		i;
-	t_stack	*travel;
 
-	i = 0;
-	travel = stack;
-	while (travel && travel->index != x)
+void	sort_3_2(t_stack **stack_a)
+{
+	if (((*stack_a)->number > (*stack_a)->next->number)
+		&& ((*stack_a)->next->number < (*stack_a)->next->next->number))
 	{
-		i++;
-		travel = travel->next;
+		rotate(stack_a, 'a');
 	}
-	return (i);
+	else if (((*stack_a)->number < (*stack_a)->next->next->number)
+		&& ((*stack_a)->next->number > (*stack_a)->next->next->number))
+	{
+		rotate(stack_a, 'a');
+		swap(stack_a, 'a');
+		rev_rotate(stack_a, 'a');
+	}
+	else if (((*stack_a)->number > (*stack_a)->next->number)
+		&& ((*stack_a)->next->number > (*stack_a)->next->next->number))
+	{
+		swap(stack_a, 'a');
+		rev_rotate(stack_a, 'a');
+	}
 }
 
-void	sort_3(t_stack **stack, char c)
+void	sort_3(t_stack **stack_a)
 {
-	t_stack	*after;
-	t_stack	*head;
-
-	if ((*stack)->index < (*stack)->next->index)
-		swap(stack, c);
-	while (!is_sorted(*stack))
+	if (((*stack_a)->number > (*stack_a)->next->number)
+		&& ((*stack_a)->number < (*stack_a)->next->next->number))
 	{
-		head = *stack;
-		after = head->next;
-		if (head->index > after->index)
-			swap(stack, c);
-		else
-			rev_rotate(stack, c);
+		swap(stack_a, 'a');
 	}
+	else if (((*stack_a)->number > (*stack_a)->next->next->number)
+		&& ((*stack_a)->next->number > (*stack_a)->next->next->number)
+		&& ((*stack_a)->number < (*stack_a)->next->number))
+	{
+		rev_rotate(stack_a, 'a');
+	}
+	else
+		sort_3_2(stack_a);
 }
 
 void	sort_4(t_stack **stack_a, t_stack **stack_b, int x)
@@ -73,7 +80,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, int x)
 			rev_rotate(stack_a, 'a');
 	}
 	push(stack_a, stack_b, 'b');
-	sort_3(stack_a, 'a');
+	sort_3(stack_a);
 	push(stack_b, stack_a, 'a');
 }
 

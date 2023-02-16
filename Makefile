@@ -14,6 +14,7 @@ SRCS		=	main.c \
 				double_operations.c \
 				create.c \
 				free.c \
+				list.c \
 				operations.c \
 				parsing.c \
 				search_pos.c \
@@ -27,6 +28,7 @@ SRCS_BONUS	=	${GNL_DIR}get_next_line.c \
 				create.c \
 				parsing.c \
 				free.c \
+				list.c \
 				operations.c \
 				utils.c \
 				bonus/main.c \

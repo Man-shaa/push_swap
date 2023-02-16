@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:05:05 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 15:14:33 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:01:47 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,4 @@ long long	ft_atoi(char *str)
 		i++;
 	}
 	return (res * sign);
-}
-
-int	ft_lstsize(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		i++;
-		stack = stack->next;
-	}
-	return (i);
-}
-
-t_stack	*ft_lstlast(t_stack *stack)
-{
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
 }

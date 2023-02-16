@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:39:52 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/15 16:33:01 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:59:08 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,19 @@ void	find_pos_in_b(t_stack *stack, t_stack *tmp)
 		tmp->pos_in_b++;
 		stack = stack->next;
 	}
+}
+
+int	find_index(t_stack *stack, int x)
+{
+	int		i;
+	t_stack	*travel;
+
+	i = 0;
+	travel = stack;
+	while (travel && travel->index != x)
+	{
+		i++;
+		travel = travel->next;
+	}
+	return (i);
 }

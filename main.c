@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:09:49 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 17:37:37 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:31:13 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	main(int ac, char **av)
 		big_sort(stack_a, stack_b);
 	else
 		small_sort(stack_a, stack_b);
+	printf("\n%d\n", is_sorted(*stack_a));
 	free_all(stack_a, stack_b);
 	return (0);
 }
