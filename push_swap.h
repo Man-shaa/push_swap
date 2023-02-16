@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:10:16 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:40:48 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:46:07 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ typedef struct s_stack
 	int				pos_in_b;
 	struct s_stack	*next;
 }				t_stack;
-
-void		print_stack(t_stack *stack, char *name);
 
 // big_sort.c
 int			big_sort(t_stack **stack_a, t_stack **stack_b);
