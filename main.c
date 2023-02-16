@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:09:49 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:41:49 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:00:12 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 // 	}
 // 	printf("\n");
 // }
+
+// ARG=$(shuf -i 0-1000 -n 6); valgrind ./push_swap $ARG | ./checker_linux $ARG
 
 int	main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:12:11 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:29:33 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:48:10 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	keep_3_in_a(t_stack **stack_a, t_stack **stack_b)
 		if ((*stack_a)->index < size)
 		{
 			j++;
-			push(stack_a, stack_b, 'a');
+			push(stack_a, stack_b, 'b');
 		}
 		else
 			rotate(stack_a, 'a');
