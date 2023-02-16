@@ -6,6 +6,8 @@ OBJS_DIR	=	objs
 
 ALGO_DIR	=	algo/
 
+OP_DIR		=	operations/
+
 GNL_DIR		=	bonus/GNL/
 
 B_OBJS_DIR	=	objs/bonus
@@ -13,11 +15,11 @@ B_OBJS_DIR	=	objs/bonus
 SRCS		=	main.c \
 				${ALGO_DIR}big_sort.c \
 				${ALGO_DIR}cost.c \
-				double_operations.c \
+				${OP_DIR}double_operations.c \
 				create.c \
 				free.c \
 				list.c \
-				operations.c \
+				${OP_DIR}operations.c \
 				parsing.c \
 				${ALGO_DIR}search_pos.c \
 				${ALGO_DIR}setup_stack.c \
@@ -26,12 +28,12 @@ SRCS		=	main.c \
 
 SRCS_BONUS	=	${GNL_DIR}get_next_line.c \
 				${GNL_DIR}get_next_line_utils.c \
-				double_operations.c \
+				${OP_DIR}double_operations.c \
 				create.c \
 				parsing.c \
 				free.c \
 				list.c \
-				operations.c \
+				${OP_DIR}operations.c \
 				utils.c \
 				bonus/main.c \
 				bonus/checker.c
@@ -67,6 +69,7 @@ $(OBJS_DIR) :
 	@ mkdir -p objs/bonus/GNL
 	@ mkdir -p objs/bonus
 	@ mkdir -p objs/algo
+	@ mkdir -p objs/operations
 
 all:		${NAME}
 

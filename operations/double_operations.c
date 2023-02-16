@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:45:03 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 15:50:43 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:27:40 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rr(t_stack **stack_a, t_stack **stack_b, char c)
 {

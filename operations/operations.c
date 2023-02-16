@@ -6,11 +6,11 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:38:53 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 18:04:11 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:27:46 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	push(t_stack **stack_1, t_stack **stack_2, char c)
 {
