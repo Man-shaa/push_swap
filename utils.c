@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:05:05 by msharifi          #+#    #+#             */
-/*   Updated: 2023/02/16 22:06:28 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:28:57 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ long long	ft_atoi(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - 48;
-		if ((res > 2147483647 && sign == 1) || (res < -2147483648 && sign == -1))
+		if ((res > 2147483647 && sign == 1)
+			|| (res < -2147483648 && sign == -1))
 		{
 			err_msg(str, " is not in the range of an integer", 1);
 			exit (1);
